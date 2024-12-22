@@ -9,7 +9,8 @@ This repository focuses on building a robust system for spelling and grammar cor
   - Developed using an Edit Distance-Based approach.
   - Evaluated against models from `SymSpell` and pre-trained transformer-based models (`Hugging Face`).
 - **Grammar Checker**:
-  - Upcoming feature leveraging rule-based methods and pre-trained language models.
+  - Rule-based grammar checking system.
+  - Relies on explicitly defined linguistic rules to validate and correct sentences..
 
 ---
 
@@ -21,7 +22,7 @@ models/
     spell_checker_model.pkl          # Saved Edit Distance-Based spell checker model
 scripts/
     spell_corrector.py               # Implementation of the spell checker
-    grammar_checker.py               # Implementation of the grammar checker (TBD)
+    grammar_checker.py               # Implementation of the grammar checker
     evaluate.py                      # Script for evaluating and comparing approaches
 notebooks/
     spell_checker_exploration.ipynb  # Exploration of spell checker methods
@@ -62,8 +63,10 @@ Run the script for spelling correction:
 python scripts/spell_corrector.py
 ```
 
-### Grammar Checker (Coming Soon)
-Stay tuned for updates on grammar correction!
+### Grammar Checker
+```bash
+python scripts/grammar_checker.py
+```
 
 ---
 
