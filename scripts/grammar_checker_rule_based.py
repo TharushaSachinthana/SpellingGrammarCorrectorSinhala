@@ -1,4 +1,4 @@
-def grammar_checker(sentence):
+def grammar_checker_rule_based(sentence):
     corrections = []
 
     # Rule 1: If the sentence has "අපි" as the subject, the verb should end with "මු"
@@ -40,25 +40,4 @@ def grammar_checker(sentence):
         return corrections
     else:
         return ["The sentence is grammatically correct."]
-
-# Test examples
-examples = [
-    "මම ගීතයක් ගයමි",
-    "මම බුඳුන් වදිමි",
-    "මම බසයෙන් යයි",
-    "මා කවියක් ලියමි",
-    "අපි චාරිකාවක් යමු",
-    "අපි ආහාර පිසිමු",
-    "අප නගරයට යමු",
-    "අපි නිවසට යති",
-    "ගස සුලඟට වැනෙමි",
-    "හිරු නැගෙනහිරින් නැග එයි",
-    "මිනිසා රැකියාවට යයි"
-]
-
-for example in examples:
-    result = grammar_checker(example)
-    print(f"Sentence: {example}")
-    for res in result:
-        print(f"  - {res}")
-    print()
+        
