@@ -1,99 +1,88 @@
-# Project Overview
+### README.md
 
-This repository contains tools and resources for building and evaluating a Sinhala language spell checker and grammar checker. The aim is to provide effective tools for detecting and correcting spelling and grammar errors in Sinhala text.
+# Sinhala Spelling and Grammar Corrector
 
-## Directory Structure
+This repository focuses on building a robust system for spelling and grammar correction in the Sinhala language. It includes multiple approaches and evaluations to identify the most accurate methods.
 
+## **Project Features**
+- **Spell Checker**:
+  - Developed using an Edit Distance-Based approach.
+  - Evaluated against models from `SymSpell` and pre-trained transformer-based models (`Hugging Face`).
+- **Grammar Checker**:
+  - Upcoming feature leveraging rule-based methods and pre-trained language models.
+
+---
+
+## **Repository Structure**
 ```
 data/
     corrected_sinhala_words.csv       # Corrected Sinhala words dataset
 models/
-    spell_checker_model.pkl          # Saved spell checker model
+    spell_checker_model.pkl          # Saved Edit Distance-Based spell checker model
 scripts/
-    spell_corrector.py               # Spelling correction implementation
-    grammar_checker.py               # Grammar checking (to be implemented)
-    evaluate.py                      # Evaluation script
+    spell_corrector.py               # Implementation of the spell checker
+    grammar_checker.py               # Implementation of the grammar checker (TBD)
+    evaluate.py                      # Script for evaluating and comparing approaches
 notebooks/
-    spell_checker_exploration.ipynb  # Jupyter notebook for spelling exploration
-    grammar_checker_exploration.ipynb  # (Placeholder for grammar checker)
+    spell_checker_exploration.ipynb  # Exploration of spell checker methods
+    grammar_checker_exploration.ipynb  # Placeholder for grammar checker exploration
 results/
-    spell_checker_comparison_results.csv # Results from evaluation
+    spell_checker_comparison_results.csv # Comparison results for spelling correction
 docs/
-    README.md                        # Project overview and instructions
-    approach_comparison.md           # Details about spell and grammar checker methods
+    approach_comparison.md           # Comparison of methods for spelling and grammar correction
+    README.md                        # Project documentation
 ```
 
-## Getting Started
+---
+
+## **Installation**
 
 ### Prerequisites
-- Python 3.8 or above
-- Install dependencies:
+- Python 3.8+
+- Libraries: `symspellpy`, `transformers`, `numpy`, `pandas`
 
-```bash
-pip install -r requirements.txt
-```
-
-### Setup
+### Steps
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/TharushaSachinthana/SpellingGrammarCorrectorSinhala.git
+   cd SpellingGrammarCorrectorSinhala
    ```
-2. Prepare the dataset:
-   - Place the `corrected_sinhala_words.csv` file in the `data/` directory.
-
-3. Train the spell checker model:
+2. Install dependencies:
    ```bash
-   python scripts/spell_corrector.py --train data/corrected_sinhala_words.csv
+   pip install -r requirements.txt
    ```
 
-### Usage
-- **Spell Checker:**
-  ```bash
-  python scripts/spell_corrector.py --correct "your text here"
-  ```
+---
 
-- **Grammar Checker:** (To be implemented)
+## **Usage**
 
-### Evaluation
-Run the evaluation script to compare the model's performance:
+### Spell Checker
+Run the script for spelling correction:
 ```bash
-python scripts/evaluate.py
+python scripts/spell_corrector.py
 ```
-Results will be saved in the `results/` directory.
 
-## Project Files
+### Grammar Checker (Coming Soon)
+Stay tuned for updates on grammar correction!
 
-### `data/`
-Contains the dataset of corrected Sinhala words used for training and evaluation.
+---
 
-### `models/`
-Stores the trained spell checker model (`spell_checker_model.pkl`).
+## **Results**
+- **Spell Checker**:
+  - **Edit Distance-Based**: High accuracy and flexibility for small datasets.
+  - **SymSpell**: Limited accuracy for Sinhala due to lack of large pre-built dictionaries.
+  - **Pre-Trained Transformer Models**: Context-aware but less effective for out-of-vocabulary Sinhala words.
 
-### `scripts/`
-- `spell_corrector.py`: Implements the spell checker functionality.
-- `grammar_checker.py`: Placeholder for grammar checking functionality.
-- `evaluate.py`: Script for evaluating the performance of the spell checker.
+Detailed results can be found in [`results/spell_checker_comparison_results.csv`](./results/spell_checker_comparison_results.csv).
 
-### `notebooks/`
-Jupyter notebooks for exploration and experimentation:
-- `spell_checker_exploration.ipynb`: Analysis and visualization of the spell checker.
-- `grammar_checker_exploration.ipynb`: Placeholder for grammar checker exploration.
+---
 
-### `results/`
-Evaluation results, including comparison with other approaches, are saved here.
+## **Next Steps**
+1. Complete Grammar Checker implementation.
+2. Integrate spelling and grammar correction into a unified system.
+3. Finalize evaluation and deploy the models as an API or web application.
 
-### `docs/`
-- `README.md`: This file.
-- `approach_comparison.md`: Detailed documentation on the approaches used for spell and grammar checking.
+---
 
-## Future Work
-- Implement and integrate grammar checking.
-- Enhance the dataset for better model accuracy.
-- Compare with other existing models and approaches.
-
-## Contributing
-Contributions are welcome! Please submit a pull request or raise an issue if you have suggestions or improvements.
-
-## License
-This project is licensed under the MIT License. See `LICENSE` for details.
+## **Contributions**
+Contributions are welcome! Feel free to fork the repository and create pull requests.
