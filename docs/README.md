@@ -63,7 +63,7 @@ Run the script for spelling correction:
 python scripts/spell_corrector.py
 ```
 
-### Grammar Checker (Coming Soon)
+### Grammar Checker
 ```bash
 python scripts/grammar_checker.py
 ```
